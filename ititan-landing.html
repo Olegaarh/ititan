@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>План Титан — персональный разбор мужской фертильности</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #111111;
+  --bg2:      #181818;
+  --bg3:      #202020;
+  --champagne:#c4a882;
+  --champ-dim:#8a7355;
+  --text:     #e8e4dc;
+  --text-mid: #a09890;
+  --text-dim: #5a5450;
+  --border:   #2a2a2a;
+  --border-l: #333330;
+  --max:      1160px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ─── NAV ─── */
+nav {
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--champagne);
+  text-transform: uppercase;
+}
+
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--champagne);
+  padding: 10px 22px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-cta:hover { opacity: 0.85; }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 80px 48px 100px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 28px;
+  max-width: 780px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--champagne);
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--text-mid);
+  max-width: 560px;
+  margin-bottom: 44px;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--champagne);
+  padding: 16px 36px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.trust-strip {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.trust-strip span {
+  margin: 0 8px;
+}
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 48px;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── SECTION BASE ─── */
+.section {
+  padding: 80px 48px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garant', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+
+/* ─── BLOCK 2: TRIGGERS ─── */
+.triggers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.trigger-card {
+  background: var(--bg2);
+  padding: 36px 32px;
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.trigger-card:hover {
+  border-left-color: var(--champagne);
+}
+
+.trigger-num {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--champ-dim);
+  margin-bottom: 16px;
+}
+
+.trigger-card p {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.trigger-card strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ─── BLOCK 3: OUTCOMES ─── */
+.outcomes-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 64px;
+}
+
+.outcome-card {
+  background: var(--bg2);
+  padding: 36px 32px;
+}
+
+.outcome-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 20px;
+  color: var(--champagne);
+}
+
+.outcome-card h3 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.outcome-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.jobs-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  list-style: none;
+}
+
+.jobs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+  padding: 16px 20px;
+  background: var(--bg2);
+}
+
+.jobs-list li::before {
+  content: '→';
+  color: var(--champagne);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── BLOCK 4: ALTERNATIVES ─── */
+.alts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  margin-bottom: 48px;
+}
+
+.alt-card {
+  background: var(--bg2);
+  padding: 36px 32px;
+}
+
+.alt-card h3 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.alt-card .alt-problem {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.65;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.alt-card .alt-titan {
+  font-size: 14px;
+  color: var(--champagne);
+}
+
+.alt-card .alt-titan strong {
+  font-weight: 500;
+}
+
+/* ─── BLOCK 5: WHAT YOU GET ─── */
+.gets-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2px;
+}
+
+.get-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding: 28px 32px;
+  background: var(--bg2);
+}
+
+.get-num {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--champ-dim);
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.get-item h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.get-item p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ─── BLOCK 6: HOW IT WORKS ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.step-card {
+  background: var(--bg2);
+  padding: 40px 32px;
+  position: relative;
+}
+
+.step-num {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--border-l);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
+.step-arrow {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--champ-dim);
+  font-size: 20px;
+  z-index: 1;
+}
+
+/* ─── BLOCK 7: WHO ─── */
+.who-wrap {
+  background: var(--bg2);
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.who-text h2 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.who-text p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.who-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.who-stat {
+  background: var(--bg3);
+  padding: 28px 24px;
+}
+
+.who-stat-num {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--champagne);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.who-stat-label {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+/* ─── BLOCK 8: FAQ ─── */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.faq-item {
+  background: var(--bg2);
+  padding: 32px 36px;
+}
+
+.faq-item h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.faq-item p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ─── BLOCK 9: PRICE ─── */
+.price-wrap {
+  background: var(--bg2);
+  padding: 64px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+
+.price-left h2 {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.price-tag {
+  font-family: 'Cormorant Garant', serif;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--champagne);
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.price-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-includes li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+}
+
+.price-includes li::before {
+  content: '✓';
+  color: var(--champagne);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.price-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  max-width: 200px;
+  text-align: right;
+}
+
+/* ─── MID CTA ─── */
+.mid-cta {
+  padding: 20px 48px 60px;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  padding: 32px 48px;
+  max-width: var(--max);
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .logo { font-size: 18px; }
+
+footer p {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">iTitan</div>
+  <a href="#price" class="nav-cta">Получить разбор</a>
+</nav>
+
+<!-- ─── BLOCK 1: HERO ─── -->
+<section class="hero">
+  <div class="hero-label">Для пар, работающих над мужской фертильностью</div>
+  <h1>Месяцы попыток.<br>Его анализы хуже нормы.<br><em>Нет ясности что делать.</em></h1>
+  <p class="hero-sub">Персональный разбор показателей партнёра с учётом его ситуации — интерпретация, гипотезы о причинах и план действий. Результат за 24 часа.</p>
+  <a href="#price" class="btn-primary">Получить План Титан — 2 990 ₽</a>
+  <div class="trust-strip">
+    <span>Конфиденциально</span>·<span>Результат за 24 часа</span>·<span>Информационный сервис</span>
+  </div>
+</section>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 2: TRIGGERS ─── -->
+<section class="section">
+  <div class="section-label">Когда</div>
+  <h2 class="section-title">Вы здесь, потому что...</h2>
+  <div class="triggers-grid">
+    <div class="trigger-card">
+      <div class="trigger-num">01</div>
+      <p><strong>Беременность не наступает</strong> после месяцев попыток — и вы начали разбираться в его анализах</p>
+    </div>
+    <div class="trigger-card">
+      <div class="trigger-num">02</div>
+      <p><strong>Анализы пришли хуже нормы</strong> — цифры есть, но что с ними делать и насколько это серьёзно — непонятно</p>
+    </div>
+    <div class="trigger-card">
+      <div class="trigger-num">03</div>
+      <p><strong>Лечение идёт, но улучшений нет</strong> — непонятно, правильно ли движетесь и что менять</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 3: OUTCOMES ─── -->
+<section class="section">
+  <div class="section-label">Чем поможет</div>
+  <h2 class="section-title">План Титан поможет</h2>
+
+  <div class="outcomes-top">
+    <div class="outcome-card">
+      <svg class="outcome-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="18" cy="18" r="14"/>
+        <path d="M12 18l4 4 8-8"/>
+      </svg>
+      <h3>Снизить тревогу и неопределённость</h3>
+      <p>Понять что происходит, насколько серьёзно и куда двигаться — вместо бесконечного чтения форумов</p>
+    </div>
+    <div class="outcome-card">
+      <svg class="outcome-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 8v10l6 4"/>
+        <circle cx="18" cy="18" r="14"/>
+      </svg>
+      <h3>Уменьшить давление и чувство вины</h3>
+      <p>Вы делаете всё что в ваших силах. Структурированный план — это действие, а не ожидание</p>
+    </div>
+    <div class="outcome-card">
+      <svg class="outcome-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 6l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z"/>
+      </svg>
+      <h3>Почувствовать что делаете всё возможное</h3>
+      <p>На пути к родительству — с конкретными шагами а не в режиме «ждём и надеемся»</p>
+    </div>
+  </div>
+
+  <div class="jobs-title">Подойдёт вам, если вы хотите:</div>
+  <ul class="jobs-list">
+    <li>Разобраться что показывают его анализы</li>
+    <li>Выявить причины отклонений в его показателях</li>
+    <li>Убедиться что принимаемый им протокол правильный</li>
+    <li>Получить конкретный план действий для него</li>
+    <li>Найти способ вовлечь партнёра не задев его эго</li>
+    <li>Сохранить эмоциональную устойчивость и надежду</li>
+  </ul>
+</section>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 4: ALTERNATIVES ─── -->
+<section class="section">
+  <div class="section-label">Альтернативы</div>
+  <h2 class="section-title">Почему не работают<br>привычные пути</h2>
+  <div class="alts-grid">
+    <div class="alt-card">
+      <h3>Ждать и надеяться</h3>
+      <div class="alt-problem">Откладываете решение в надежде что само изменится. Но цикл сперматогенеза — 72 дня. Каждые три месяца без направленных действий — потерянный цикл. Время здесь не нейтрально.</div>
+      <div class="alt-titan"><strong>План Титан:</strong> ясность и конкретные шаги прямо сейчас</div>
+    </div>
+    <div class="alt-card">
+      <h3>Исследовать самостоятельно</h3>
+      <div class="alt-problem">Форумы дают противоречивые советы. Вы не знаете что именно спрашивать и в каком порядке двигаться. Риск потратить месяц на чтение — и всё равно не понять куда идти.</div>
+      <div class="alt-titan"><strong>План Титан:</strong> структурированная диагностика вместо хаотичного ресёрча</div>
+    </div>
+    <div class="alt-card">
+      <h3>Врач или репродуктолог</h3>
+      <div class="alt-problem">20 минут раз в несколько месяцев. Врач видит свою специальность, не всю картину. Контекст образа жизни и текущего протокола остаётся за кадром. Часто слышите «подождите ещё».</div>
+      <div class="alt-titan"><strong>План Титан:</strong> не вместо врача — рядом с ним. Помогает понять что назначено и почему</div>
+    </div>
+    <div class="alt-card">
+      <h3>ЭКО</h3>
+      <div class="alt-problem">Не первый шаг — последний. От 200 тысяч за попытку, физически и эмоционально тяжело. Многие пары не готовы к нему — и правильно делают, что ищут путь до него.</div>
+      <div class="alt-titan"><strong>План Титан:</strong> первый структурированный шаг прежде чем принимать решение об ЭКО</div>
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta">
+  <a href="#price" class="btn-primary">Получить План Титан — 2 990 ₽</a>
+</div>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 5: WHAT YOU GET ─── -->
+<section class="section">
+  <div class="section-label">Состав</div>
+  <h2 class="section-title">Что входит в разбор</h2>
+  <div class="gets-list">
+    <div class="get-item">
+      <div class="get-num">01</div>
+      <div>
+        <h3>Интерпретация показателей</h3>
+        <p>Понятный разбор каждого параметра спермограммы и других анализов — что в норме, что отклонено и насколько это значимо</p>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-num">02</div>
+      <div>
+        <h3>Гипотезы о причинах</h3>
+        <p>3–5 вероятных причин отклонений с учётом его возраста, образа жизни и истории — без диагнозов, но с конкретными версиями</p>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-num">03</div>
+      <div>
+        <h3>Диагностическая карта</h3>
+        <p>Список чего не хватает для полной картины — какие анализы сдать в первую очередь и почему именно они, а не другие</p>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-num">04</div>
+      <div>
+        <h3>Приоритетные действия</h3>
+        <p>3–5 конкретных шагов на ближайшие 2 недели — не общие советы, а действия под его ситуацию</p>
+      </div>
+    </div>
+    <div class="get-item">
+      <div class="get-num">05</div>
+      <div>
+        <h3>Протокол или следующие шаги</h3>
+        <p>Если данных достаточно — конкретный протокол. Если нет — точный список что сдать чтобы его составить</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta">
+  <a href="#price" class="btn-primary">Получить разбор за 2 990 ₽</a>
+</div>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 6: HOW IT WORKS ─── -->
+<section class="section">
+  <div class="section-label">Процесс</div>
+  <h2 class="section-title">Три шага</h2>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Оплата</h3>
+      <p>Оплатите онлайн — 2 990 ₽. Сразу после этого получите ссылку на анкету</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Анкета — 10 минут</h3>
+      <p>Загрузите спермограмму и ответьте на вопросы о его ситуации — возраст, образ жизни, текущий протокол, история</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Разбор в Telegram</h3>
+      <p>В течение 24 часов получите детективный разбор в Telegram — структурированно, понятным языком</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 7: WHO ─── -->
+<section class="section">
+  <div class="who-wrap">
+    <div class="who-text">
+      <h2>Кто за этим стоит</h2>
+      <p>Сервис создан для пар которые хотят разобраться в ситуации до принятия больших и дорогих решений.</p>
+      <p>Разбор готовится специалистом с использованием проверенных медицинских источников и актуальных данных по мужской репродуктивной функции.</p>
+      <p>Данные используются только для подготовки вашего разбора и никуда не передаются.</p>
+    </div>
+    <div class="who-stats">
+      <div class="who-stat">
+        <div class="who-stat-num">72</div>
+        <div class="who-stat-label">дня — цикл сперматогенеза. Каждый цикл важен</div>
+      </div>
+      <div class="who-stat">
+        <div class="who-stat-num">24ч</div>
+        <div class="who-stat-label">максимальное время подготовки разбора</div>
+      </div>
+      <div class="who-stat">
+        <div class="who-stat-num">5</div>
+        <div class="who-stat-label">разделов в каждом персональном разборе</div>
+      </div>
+      <div class="who-stat">
+        <div class="who-stat-num">100%</div>
+        <div class="who-stat-label">конфиденциально — данные не передаются третьим лицам</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 8: FAQ ─── -->
+<section class="section">
+  <div class="section-label">Вопросы</div>
+  <h2 class="section-title">Частые вопросы</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3>Что если у нас только одна спермограмма, других анализов нет?</h3>
+      <p>Этого достаточно для начала. Разбор включает интерпретацию того что есть и точный список что сдать дальше — в порядке приоритета и с объяснением зачем каждый анализ нужен. Вы не потратите деньги на лишние обследования.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Это конфиденциально?</h3>
+      <p>Да. Данные которые вы предоставляете используются только для подготовки вашего разбора. Они не передаются третьим лицам, не хранятся в открытом доступе и не используются в других целях.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Чем это отличается от запроса в ChatGPT?</h3>
+      <p>ChatGPT не знает что спрашивать и в каком порядке. Мы целенаправленно собираем полный контекст ситуации — анализы, возраст, образ жизни, текущий протокол, историю — и только после этого делаем разбор. Разница в глубине входных данных и структуре вывода.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div></div></div>
+
+<!-- ─── BLOCK 9: PRICE ─── -->
+<section class="section" id="price">
+  <div class="section-label">Стоимость</div>
+  <div class="price-wrap">
+    <div class="price-left">
+      <h2>План Титан</h2>
+      <div class="price-tag">2 990 ₽</div>
+      <ul class="price-includes">
+        <li>Персональный разбор показателей</li>
+        <li>Гипотезы о причинах отклонений</li>
+        <li>Диагностическая карта — что сдать дальше</li>
+        <li>Приоритетные действия на 2 недели</li>
+        <li>Доставка в Telegram в течение 24 часов</li>
+      </ul>
+    </div>
+    <div class="price-right">
+      <a href="#" class="btn-primary">Получить разбор</a>
+      <p class="disclaimer">Сервис носит информационный характер и не является медицинской консультацией</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">iTitan</div>
+  <p>© 2026 · Информационный сервис · ititan.ru</p>
+</footer>
+
+</body>
+</html>
